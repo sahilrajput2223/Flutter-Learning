@@ -70,21 +70,63 @@ class Home extends StatelessWidget {
                   ),
                 ],
               ),
-              CoffeeImageWidget()
+              CoffeeImageWidget(),
+              OrderButton(),
             ],
-
           )),
     );
   }
 }
 
-
-class CoffeeImageWidget extends StatelessWidget{
+class CoffeeImageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AssetImage coffeeAsset = AssetImage('images/coffee.png');
-    Image coffeeImage = Image(image: coffeeAsset, width: 400.0, height: 400.0,);
-    return Container(child: coffeeImage,);
+    Image coffeeImage = Image(
+      image: coffeeAsset,
+      width: 400.0,
+      height: 400.0,
+    );
+    return Container(
+      child: coffeeImage,
+    );
+  }
+}
+
+class OrderButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var button = Container(
+      child: RaisedButton(
+        child: Text(
+          "Order Coffee",
+          textDirection: TextDirection.ltr,
+        ),
+        color: Colors.lightGreen,
+        elevation: 5.0,
+        onPressed: () {
+          order(context);
+        },
+      ),
+    );
+    return button;
   }
 
+  void order(BuildContext context) {
+    var alert = AlertDialog(
+      title: Text(
+        "Order Complete",
+        textDirection: TextDirection.ltr,
+      ),
+      content: Text(
+        "Thank you for your order",
+        textDirection: TextDirection.ltr,
+      ),
+    );
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return alert;
+        });
+  }
 }
