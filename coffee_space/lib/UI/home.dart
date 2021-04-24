@@ -12,7 +12,7 @@ class Home extends StatelessWidget {
         height: 50.0,  -- To Add Container Height
         margin: EdgeInsets.all(50.0), -- To Add Container Margin
         padding : EdgeInsets.all(50.0), -- To Add Container Padding*/
-          child: Column(  
+          child: Column(
             children: [
               Row(
                 children: [
@@ -70,8 +70,21 @@ class Home extends StatelessWidget {
                   ),
                 ],
               ),
+              CoffeeImageWidget()
             ],
+
           )),
     );
   }
+}
+
+
+class CoffeeImageWidget extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    AssetImage coffeeAsset = AssetImage('images/coffee.png');
+    Image coffeeImage = Image(image: coffeeAsset, width: 400.0, height: 400.0,);
+    return Container(child: coffeeImage,);
+  }
+
 }
