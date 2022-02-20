@@ -9,11 +9,10 @@ void main() {
           backgroundColor: Colors.blueGrey[900],
           title: Text('I Am Rich'),
         ),
-        backgroundColor: Colors.deepOrange[100],
+        backgroundColor: Colors.blueGrey[700],
         body: Center(
           child: Image(
-            image: NetworkImage(
-                'https://png.pngtree.com/illustrations/20190327/ourmid/pngtree-cure-starry-sky-night-sky-star-png-image_38228.jpg'),
+            image: AssetImage('images/diamond.png'),
           ),
         ),
       ),
